@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.kr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 14:42:02 by seongjki          #+#    #+#             */
-/*   Updated: 2021/07/05 14:39:57 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/12/06 19:08:56 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,13 @@ char	*make_tmp(int value, t_info info)
 {
 	char	*tmp;
 
-	tmp = ft_itoa(value);
-	if (info.type == 'x')
+	if (info.type == 'd' || info.type == 'i')
+		tmp = ft_itoa(value);
+	else if (info.type == 'x')
 		tmp = ft_xtoa(value);
-	if (info.type == 'X')
+	else if (info.type == 'X')
 		tmp = ft_upper_xtoa(value);
-	if (info.type == 'u')
+	else if (info.type == 'u')
 		tmp = ft_utoa(value);
 	return (tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: seongjki <seongjk@student.42seoul.kr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 14:27:27 by seongjki          #+#    #+#             */
-/*   Updated: 2021/07/05 14:40:20 by seongjki         ###   ########.fr       */
+/*   Updated: 2021/12/06 19:06:39 by seongjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static char	*apply_precision(va_list ap, t_info *info)
 	value = va_arg(ap, char *);
 	idx = -1;
 	if (value == NULL)
-		value = ft_strdup("(null)");
+		value = "(null)";
 	len = ft_strlen(value);
 	if (info->precision_size > len)
 		info->precision_size = len;
